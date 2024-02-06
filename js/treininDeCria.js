@@ -59,7 +59,3 @@ function embaralharNomes(lista) {
             [lista[indiceAleatorio], lista[indice - 1]];
     }
 }
-
-function remover() {
-    
-}
