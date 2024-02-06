@@ -32,12 +32,18 @@ function sortear() {
     embaralharNomes(amigosQueJaForam);
     let sorteio = document.getElementById("lista-sorteio");
 
-    for(let i = 0; i < amigosQueJaForam.length; i++) {
-        if(i == amigosQueJaForam.length - 1) {
-            sorteio.innerHTML = sorteio.innerHTML + `<p id="lista-sorteio">${amigosQueJaForam[i]} --> ${amigosQueJaForam[0]}</p>`;
-        }
-        else {
-            sorteio.innerHTML = sorteio.innerHTML + `<p id="lista-sorteio">${amigosQueJaForam[i]} --> ${amigosQueJaForam[i + 1]}</p>`;
+    if(amigosQueJaForam.length < 4) {
+        alert("Insira 4 ou mais nomes!");
+    }
+    else {
+        for(let i = 0; i < amigosQueJaForam.length; i++) {
+
+            if(i == amigosQueJaForam.length - 1) {
+                sorteio.innerHTML = sorteio.innerHTML + `<p id="lista-sorteio">${amigosQueJaForam[i]} --> ${amigosQueJaForam[0]}</p>`;
+            }
+            else {
+                sorteio.innerHTML = sorteio.innerHTML + `<p id="lista-sorteio">${amigosQueJaForam[i]} --> ${amigosQueJaForam[i + 1]}</p>`;
+            }
         }
     }
 }
@@ -52,4 +58,10 @@ function embaralharNomes(lista) {
         [lista[indice - 1], lista[indiceAleatorio]] = 
             [lista[indiceAleatorio], lista[indice - 1]];
     }
+}
+
+function remover() {
+    amigoEscolhido = document.getElementById("nome-amigo").value;
+    amigosIncluidos = document.getElementById("lista-amigos");
+    
 }
