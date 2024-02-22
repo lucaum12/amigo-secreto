@@ -75,13 +75,14 @@ function atualizarLista() {
         let paragrafo = document.createElement("p");
         paragrafo.textContent = listaIncluidos[i];
 
+
+        //agora eu preciso adicionar os elementos paragrafos criados á listaAmigos, porquê é lá que os paragrafos devem estar no HTML;
+        listaAmigos.appendChild(paragrafo);
+        
+
         //preciso adicionar um evento de clique no nome para ser removido;
         paragrafo.addEventListener("click", function() {
             excluirAmigo(i)
         });
-
-
-        //agora eu preciso adicionar os elementos paragrafos criados á listaAmigos, porquê é lá que os paragrafos devem estar no HTML;
-        listaAmigos.appendChild(paragrafo);
     }
 }
